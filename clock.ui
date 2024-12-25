@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object id="window" class="GtkWindow">
+    <property name="title">Clock</property>
+    <property name="default-width">240</property>
+    <property name="default-height">260</property>
+    <child>
+      <object id="clock" class="GtkDrawingArea">
+        <property name="hexpand">TRUE</property>
+        <property name="vexpand">TRUE</property>
+      </object>
+    </child>
+  </object>
+</interface>
