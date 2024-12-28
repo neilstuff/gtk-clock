@@ -22,4 +22,5 @@ clock: $(OBJS)
 
 clean:
 	rm -f $(OBJS)
+	rm -f resource.c
 	rm -f clock
