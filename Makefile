@@ -1,5 +1,12 @@
 CC = gcc
 PKGCONFIG = pkg-config
+
+ifeq ($(OS),Windows_NT)
+	DELETE = del
+else
+	DELETE = rm
+endif
+
 COMPILE_RESOURCES = glib-compile-resources
 CFLAGS = $(shell $(PKGCONFIG) --cflags gtk4)
 LIBS = $(shell $(PKGCONFIG)  --libs gtk4)
@@ -21,6 +28,6 @@ clock: $(OBJS)
 	$(CC) -o $(@F) $(OBJS) -mwindows $(LIBS)
 
 clean:
-	rm -f $(OBJS)
-	rm -f resource.c
-	rm -f clock
+	$(DELETE) $(OBJS)
+	$(DELETE) resource.c
+	$(DELETE) clock
