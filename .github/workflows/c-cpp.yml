@@ -13,7 +13,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - install:
+    - name: install
       run: sudo apt-get -y install libgtk-4-dev
     - name: make
       run: make
