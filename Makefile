@@ -7,6 +7,12 @@ else
 	DELETE = rm
 endif
 
+ifdef DEPLOY 
+	WINDOWS=-mwindows
+else
+	WINDOWS=
+endif
+
 COMPILE_RESOURCES = glib-compile-resources
 CFLAGS = $(shell $(PKGCONFIG) --cflags gtk4)
 LIBS = $(shell $(PKGCONFIG)  --libs gtk4)
@@ -25,7 +31,7 @@ resource.c: clock.gresource.xml clock.ui
 	$(CC) -c -o $(@F) $(CFLAGS) $<
 
 clock: $(OBJS)
-	$(CC) -o $(@F) $(OBJS) -mwindows $(LIBS)
+	$(CC) -o $(@F) $(OBJS) $(WINDOWS) $(LIBS)
 
 clean:
 	$(DELETE) $(OBJS)
