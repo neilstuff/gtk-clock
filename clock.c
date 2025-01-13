@@ -18,7 +18,7 @@ draw_clock (GtkDrawingArea *area, cairo_t *cr, int width, int height, gpointer u
     // Set the line width and save the cairo drawing state.
     cairo_set_line_width(cr, m_line_width);
     cairo_save(cr);
-
+/*
     // Set the background to a slightly transparent green.
     cairo_set_source_rgba(cr, 0.337, 0.612, 0.117, 0.9);   // green
     cairo_paint(cr);
@@ -119,6 +119,7 @@ draw_clock (GtkDrawingArea *area, cairo_t *cr, int width, int height, gpointer u
     // Draw a little dot in the middle
     cairo_arc(cr, 0.0, 0.0, m_line_width / 3.0, 0.0, 2.0 * M_PI);
     cairo_fill(cr);
+*/
 }
 
 gboolean
