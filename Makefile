@@ -31,7 +31,7 @@ resource.c: clock.gresource.xml clock.ui
 	$(CC) -c -o $(@F) $(CFLAGS) $<
 
 clock: $(OBJS)
-	$(CC) -o $(@F) $(OBJS) $(WINDOWS) $(LIBS)
+	$(CC) -o $(@F) $(OBJS) $(WINDOWS) $(LIBS) -lpaper
 
 clean:
 	$(DELETE) $(OBJS)
